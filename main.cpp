@@ -37,6 +37,8 @@ int main(int argc, char **argv)
     std::cout << "Computing reconstruction error map: \n";
     std::vector<std::vector<double>> error_r, error_g, error_b;
 
+    detector.inspect(X_test, test_h, test_w, sensitivity, error_r, error_g, error_b);
+
     Image::saveJPG(out_path, error_r, error_g, error_b);
     std::cout << "Defect heatmap saved to: " << out_path << "\n";
 }
